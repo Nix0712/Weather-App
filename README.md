@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+After installing, create file with .env -> API_KEY=YOUR_API_KEY form https://www.weatherapi.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
