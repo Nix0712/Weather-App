@@ -1,6 +1,6 @@
 
-import { WeatherInfo } from './definitions';
-import { conditionCodes } from './conditionCodes';
+import { WeatherInfo } from '../definitions';
+import { conditionCodes } from '../conditionCodes';
 
 export default function WeatherStats({ data }: { data: WeatherInfo }) {
     const condition = conditionCodes.find(item => item.code === data.current.condition.code);

@@ -1,7 +1,5 @@
 const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
-console.log('API_KEY:', apiKey);
-
 export function fetchWeather(location?: string): Promise<any> {
     if (location) {
         return fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`)

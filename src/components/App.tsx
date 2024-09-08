@@ -1,13 +1,12 @@
 import React from 'react';
-import './App.css';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import WeatherStats from './weather-info';
-import { useState, useRef, useEffect } from 'react';
-import { fetchWeather } from './data';
-import { WeatherInfo } from './definitions';
-import { defaultWeather } from './defaultData';
+import SingleInfo from './single-info';
+import { useState, useEffect } from 'react';
+import { fetchWeather } from '../data';
+import { WeatherInfo } from '../definitions';
+import { defaultWeather } from '../defaultData';
 import { Suspense } from 'react';
-import { spawn } from 'child_process';
 
 
 
@@ -44,7 +43,7 @@ function App() {
           <div className='bg-black/8 flex flex-col mb-2 justify-center items-center row-span-4 backdrop-blur-md rounded-3xl p-10 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px] sm:flex-row sm:justify-between'>
             <div className='flex'>
               <MapPinIcon title='Location' className="h-10 w-10" />
-              <Suspense fallback={`<span>Loading<span/>`}>
+              <Suspense fallback={`<span>Loading...<span/>`}>
                 <span className="ml-2 text-4xl">{location}</span>
               </Suspense>
             </div>
@@ -65,9 +64,25 @@ function App() {
             <div className="bg-black/8 overflow-y-auto grow m-5 min-h-[300px] backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
               <WeatherStats data={weather} />
             </div>
-            <div className="bg-black/8  overflow-y-auto grow m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
-              <WeatherStats data={weather} />
+
+            <div className='grow'>
+              <div className="bg-black/8  overflow-y-auto grow max-h-[150px] m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
+                <SingleInfo data={weather} type='humidity' />
+              </div>
+              <div className="bg-black/8  overflow-y-auto grow max-h-[150px] m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
+                <SingleInfo data={weather} type='pressure' />
+              </div>
             </div>
+
+            <div className='grow'>
+              <div className="bg-black/8  overflow-y-auto grow max-h-[150px] m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
+                <SingleInfo data={weather} type='uv' />
+              </div>
+              <div className="bg-black/8  overflow-y-auto grow max-h-[150px] m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
+                <SingleInfo data={weather} type='pressure' />
+              </div>
+            </div>
+
             <div className="bg-black/8 grow m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
               <WeatherStats data={weather} />
             </div>
