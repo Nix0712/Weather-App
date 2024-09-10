@@ -79,26 +79,18 @@ function App() {
                 <SingleInfo data={weather} type='uv' />
               </div>
               <div className="bg-black/8  overflow-y-auto grow max-h-[150px] m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
-                <SingleInfo data={weather} type='pressure' />
+                <SingleInfo data={weather} type='cover' />
               </div>
             </div>
 
-            <div className="bg-black/8 grow m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
-              <WeatherStats data={weather} />
+            <div className='grow'>
+              <div className="bg-black/8  overflow-y-auto grow max-h-[150px] m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
+                <SingleInfo data={weather} type='dew' />
+              </div>
+              <div className="bg-black/8  overflow-y-auto grow max-h-[150px] m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
+                <SingleInfo data={weather} type='wind' />
+              </div>
             </div>
-            <div className="bg-black/8 grow m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
-              <WeatherStats data={weather} />
-            </div>
-            <div className="bg-black/8 grow m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
-              <WeatherStats data={weather} />
-            </div>
-            <div className="bg-black/8 grow m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
-              <WeatherStats data={weather} />
-            </div>
-            <div className="bg-black/8 grow m-5 backdrop-blur-2xl rounded-3xl p-8 shadow-[rgba(0,0,0,0.2)_0px_0px_100px_0px]">
-              <WeatherStats data={weather} />
-            </div>
-            1
           </div>
 
         </div>
